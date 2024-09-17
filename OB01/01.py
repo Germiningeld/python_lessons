@@ -5,7 +5,7 @@ class Task:
     def __init__(self, tasks:dict = {}):
         self.tasks = tasks
 
-    def add_task(self, description:str, deadline:datetime, completed:bool, id:int|None = None):
+    def add_task(self, description:str, deadline:datetime, completed:bool):
         if len(self.tasks) > 0:
             id = max(self.tasks.keys()) + 1
         else:
