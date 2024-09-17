@@ -16,12 +16,14 @@ class Task:
         self.tasks[id]['completed'] = completed
 
     def completed_task(self, id:int):
-        self.tasks[id]['completed'] = not self.tasks[id]['completed']
+        try:
+            self.tasks[id]['completed'] = not self.tasks[id]['completed']
+        except:
+            print(f'Задача с id = {id} не найдена.')
 
     def current_tasks(self):
         for key, value in self.tasks.items():
             if value['completed'] == False:
-
                 print(key, value)
 
 # Инициализация объекта
@@ -41,6 +43,7 @@ print()
 # Изменение значения атрибута completed
 tasks.completed_task(0)
 tasks.completed_task(1)
+tasks.completed_task(2)
 
 
 # Вывод словаря tasks
